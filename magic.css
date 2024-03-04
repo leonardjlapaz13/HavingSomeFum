@@ -225,6 +225,7 @@ ul {
     font-size: 24px;
     min-width: 196px;
   }
+} 
 
 #strength {
   align-items: center;
@@ -262,7 +263,7 @@ ul {
     font-size: 24px;
     min-width: 196px;
   }
-
+}
 footer {
   background-color: #343a40; /* Dark background */
   color: #fff; /* White text */
