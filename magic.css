@@ -1,3 +1,10 @@
+.heed {
+  font-family: 'Honk', serif;
+        font-size: 48px;
+  margin-left: 4%;
+}
+
+
 .gallery-container {
   display: flex;
   justify-content: center;
