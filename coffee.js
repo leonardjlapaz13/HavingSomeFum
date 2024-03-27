@@ -1,30 +1,29 @@
-const slideGallery = document.querySelector('.slides');
-const slides = slideGallery.querySelectorAll('div');
-const scrollbarThumb = document.querySelector('.thumb');
-const slideCount = slides.length;
-const slideHeight = 720;
-const marginTop = 16;
-
-const scrollThumb = () => {
-  const index = Math.floor(slideGallery.scrollTop / slideHeight);
-  scrollbarThumb.style.height = `${((index + 1) / slideCount) * slideHeight}px`;
+// Set constraints for the video stream
+var constraints = { video: { facingMode: "user" }, audio: false };
+// Define constants
+const cameraView = document.querySelector("#camera--view"),
+    cameraOutput = document.querySelector("#camera--output"),
+    cameraSensor = document.querySelector("#camera--sensor"),
+    cameraTrigger = document.querySelector("#camera--trigger")
+// Access the device camera and stream to cameraView
+function cameraStart() {
+    navigator.mediaDevices
+        .getUserMedia(constraints)
+        .then(function(stream) {
+        track = stream.getTracks()[0];
+        cameraView.srcObject = stream;
+    })
+    .catch(function(error) {
+        console.error("Oops. Something is broken.", error);
+    });
+}
+// Take a picture when cameraTrigger is tapped
+cameraTrigger.onclick = function() {
+    cameraSensor.width = cameraView.videoWidth;
+    cameraSensor.height = cameraView.videoHeight;
+    cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
+    cameraOutput.src = cameraSensor.toDataURL("image/webp");
+    cameraOutput.classList.add("taken");
 };
-
-const scrollToElement = el => {
-  const index = parseInt(el.dataset.id, 10);
-  slideGallery.scrollTo(0, index * slideHeight + marginTop);
-};
-
-document.querySelector('.thumbnails').innerHTML += [...slides]
-  .map(
-    (slide, i) => `<img src="${slide.querySelector('img').src}" data-id="${i}">`
-  )
-  .join('');
-
-document.querySelectorAll('.thumbnails img').forEach(el => {
-  el.addEventListener('click', () => scrollToElement(el));
-});
-
-slideGallery.addEventListener('scroll', e => scrollThumb());
-
-scrollThumb();
+// Start the video stream when the window loads
+window.addEventListener("load", cameraStart, false);
