@@ -18,22 +18,17 @@
   <h1 class= "heed">This is my webpage</h1>
 </header>
 <body>
-<div class="gallery-container">
-  <div class="thumbnails"></div>
-  <div class="scrollbar">
-    <div class="thumb"></div>
-  </div>
-  <div class="slides">
-    <div><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp2939006.jpg&f=1&nofb=1&ipt=23c3c452fc310c432ecf90b7a3ed74307d80d6d7d42c6a86208742287c10e265&ipo=images"></div>
-    <div><img src="https://wallpapercave.com/wp/wp2696417.jpg"></div>
-    <div><img src="https://cdn.wallpapersafari.com/55/48/N5lPOB.jpg"></div>
-    <div><img src="https://www.pixel-creation.com/wp-content/uploads/badass-wallpapers-51-aku-iso-blog.jpg"></div>
-    <div><img src="https://picsum.photos/id/257/540/720"></div>
-    <div><img src="https://wallpapercave.com/wp/wp5291899.jpg"></div>
-    <div><img src="https://distro.gotchscape.com/wp-content/uploads/fluentform/ff-44020e3399b8fd6bcadb3903c2e0fa38-ff-ff-f3c726492dfb592f31f707249f2a7948-ff-WHAT-A-FOOL.jpg"></div>
-    <div><img src="https://picsum.photos/id/288/540/720"></div>
-    <div><img src="https://hugelolcdn.com/i/636724.png"></div>
-  </div>
-</div>
-  <script src="coffee.js"></script> 
+<div class="booth"> 
+  <!-- Camera -->
+    <main id="camera">
+        <!-- Camera sensor -->
+        <canvas id="camera--sensor"></canvas>
+        <!-- Camera view -->
+        <video id="camera--view" autoplay playsinline></video>
+        <!-- Camera output -->
+        <img src="//:0" alt="" id="camera--output">
+        <!-- Camera trigger -->
+        <button id="camera--trigger">Take a picture</button>
+    </main>
 </body>
+ <script src="coffee.js"></script> 
