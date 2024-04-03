@@ -64,7 +64,12 @@
   display: none;
   }
   
+  .booth {
+    grid: 1fr;
+  }
+  
   .camera {
     border: solid .5rem;
     margin: 1rem;
+    grid:center;
   }
