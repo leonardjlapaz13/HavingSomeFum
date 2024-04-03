@@ -62,4 +62,9 @@
 
 .slides::-webkit-scrollbar {
   display: none;
-}
+  }
+  
+  .camera {
+    border: solid .5rem;
+    margin: 1rem;
+  }
