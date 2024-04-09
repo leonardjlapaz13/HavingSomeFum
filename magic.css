@@ -86,6 +86,7 @@ nav a:hover {
   background: none;
   border: none;
   color: #fff;
+  font-family: "Cinzel", serif;
   font-size: 20px;
   cursor: pointer;
 }
